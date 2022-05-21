@@ -6,12 +6,16 @@ public class Main {
 
     public static void main(String[] args) {
         int n,r;
-        String tipAlgoritma;
+        int tipAlgoritma;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Unesite broj okvira: ");
-        n = scanner.nextInt();
-        System.out.print("Unesite broj referenci:");
-        r = scanner.nextInt();
+        do {
+            System.out.print("Unesite broj okvira: ");
+            n = scanner.nextInt();
+        }while(n<0);
+        do {
+            System.out.print("Unesite broj referenci:");
+            r = scanner.nextInt();
+        }while (r<1);
 
         int nizReferecni[] = new int[r];
         for(int i=0;i<r;i++){
@@ -20,12 +24,13 @@ public class Main {
         }
 
         do {
-            System.out.print("Izaberite algoritam:");
-            tipAlgoritma = scanner.nextLine();
-        } while (!tipAlgoritma.toUpperCase().equals("FIFO"));
+            System.out.print("1-FIFO\n2-LRU\n3-SC\n4-LFU\n5-OPTIMALNI\n");
+            System.out.print("Izaberite algoritam: ");
+            tipAlgoritma = scanner.nextInt();
+        } while ( tipAlgoritma>5 || tipAlgoritma< 1);
 
-        switch (tipAlgoritma.toUpperCase()){
-            case "FIFO":
+        switch (tipAlgoritma){
+            case 1:
             {
                 FIFO fifo = new FIFO(n,r,nizReferecni);
                 fifo.upisiPrviRed();
@@ -33,16 +38,19 @@ public class Main {
                 fifo.ispisiMatricu();
             }
                 break;
-            case "LRU":
-                //LRU ALGO
+            case 2:
+                LRU lru = new LRU(n,r,nizReferecni);
+                lru.upisiPrviRed();
+                lru.popuniMatricu();
+                lru.ispisiMatricu();
                 break;
-            case "SC":
+            case 3:
                 //Secound chance
                 break;
-            case "LFU":
+            case 4:
                 //LFU
                 break;
-            case "OPTIMALNI":
+            case 5:
                 //Optimalni algoritam
                 break;
             default:
