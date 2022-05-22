@@ -56,7 +56,12 @@ public class Main {
             }
                 break;
             case 4:
-                //LFU
+                {
+                LFU lfu = new LFU(n, r, nizReferecni);
+                lfu.popuniHashMapu();
+                lfu.popuniMatricu();
+                lfu.ispisiMatricu();
+                }
                 break;
             case 5:
                 //Optimalni algoritam
