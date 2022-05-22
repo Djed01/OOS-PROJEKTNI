@@ -38,14 +38,22 @@ public class Main {
                 fifo.ispisiMatricu();
             }
                 break;
-            case 2:
-                LRU lru = new LRU(n,r,nizReferecni);
+            case 2: {
+                LRU lru = new LRU(n, r, nizReferecni);
                 lru.upisiPrviRed();
                 lru.popuniMatricu();
                 lru.ispisiMatricu();
+            }
                 break;
             case 3:
-                //Secound chance
+            {
+                System.out.println("Unesite referencu koja ce imati R bit:");
+                int rBit = scanner.nextInt();
+                SC sc = new SC(n,r,nizReferecni,rBit);
+                sc.popuniHashMapu();
+                sc.popuniMatricu();
+                sc.ispisiMatricu();
+            }
                 break;
             case 4:
                 //LFU
