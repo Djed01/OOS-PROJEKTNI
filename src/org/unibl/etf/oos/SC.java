@@ -20,6 +20,7 @@ public class SC extends Algoritam{
 
     @Override
     void popuniMatricu() {
+        popuniHashMapu();
         upisiPrviRed();
         for(int i=0;i<brojReferenci;i++){
             if(trebaUpisatiPF(i,nizReferenci[i])){
@@ -34,7 +35,7 @@ public class SC extends Algoritam{
                     matrica[j][i]="  ";
             } else{
                 if(matrica[1][i]=="PF") {
-                    if(i>2 && mapa.get(Integer.parseInt(matrica[brojOkvira+1][i-1])) && Integer.parseInt(matrica[brojOkvira+1][i-1])!=nizReferenci[i]){
+                    if(i>brojOkvira-1 && mapa.get(Integer.parseInt(matrica[brojOkvira+1][i-1])) && Integer.parseInt(matrica[brojOkvira+1][i-1])!=nizReferenci[i]){
                         mapa.put(rBit,false);
                         matrica[2][i] = String.valueOf(nizReferenci[i]);
                         matrica[3][i] = String.valueOf(rBit);
@@ -47,20 +48,20 @@ public class SC extends Algoritam{
                         }
                     }
                     else{
-                            if(nizReferenci[i] == rBit){mapa.put(rBit,true);}
-                            matrica[2][i] = String.valueOf(nizReferenci[i]);
-                            for (int k = 3; k < brojOkvira + 2; k++) {
-                                matrica[k][i] = matrica[k - 1][i - 1];
-                            }
-                        }
-                } else{
                         if(nizReferenci[i] == rBit){mapa.put(rBit,true);}
-                        for(int k = 2; k<brojOkvira+2;k++){
-                        matrica[k][i] = matrica[k][i-1];
+                        matrica[2][i] = String.valueOf(nizReferenci[i]);
+                        for (int k = 3; k < brojOkvira + 2; k++) {
+                            matrica[k][i] = matrica[k - 1][i - 1];
                         }
                     }
+                } else{
+                    if(nizReferenci[i] == rBit){mapa.put(rBit,true);}
+                    for(int k = 2; k<brojOkvira+2;k++){
+                        matrica[k][i] = matrica[k][i-1];
                     }
                 }
+            }
+        }
 
     }
 }

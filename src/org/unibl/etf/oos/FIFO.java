@@ -7,8 +7,8 @@ public class FIFO extends Algoritam {
     }
 
     @Override
-    void popuniMatricu(){
-
+      void popuniMatricu(){
+        upisiPrviRed();
         for(int i=0;i<brojReferenci;i++)
         {
             if(trebaUpisatiPF(i,nizReferenci[i])){
@@ -33,7 +33,7 @@ public class FIFO extends Algoritam {
                     for(int k = 2; k<brojOkvira+2;k++){
                         matrica[k][i] = matrica[k][i-1];
                     }
-            }
+                }
             }
         }
     }

@@ -33,38 +33,36 @@ public class Main {
             case 1:
             {
                 FIFO fifo = new FIFO(n,r,nizReferecni);
-                fifo.upisiPrviRed();
                 fifo.popuniMatricu();
                 fifo.ispisiMatricu();
             }
-                break;
+            break;
             case 2: {
                 LRU lru = new LRU(n, r, nizReferecni);
-                lru.upisiPrviRed();
                 lru.popuniMatricu();
                 lru.ispisiMatricu();
             }
-                break;
+            break;
             case 3:
             {
                 System.out.println("Unesite referencu koja ce imati R bit:");
                 int rBit = scanner.nextInt();
                 SC sc = new SC(n,r,nizReferecni,rBit);
-                sc.popuniHashMapu();
                 sc.popuniMatricu();
                 sc.ispisiMatricu();
             }
-                break;
+            break;
             case 4:
-                {
+            {
                 LFU lfu = new LFU(n, r, nizReferecni);
-                lfu.popuniHashMapu();
                 lfu.popuniMatricu();
                 lfu.ispisiMatricu();
-                }
-                break;
+            }
+            break;
             case 5:
-                //Optimalni algoritam
+                OPTIMALNI optimalni =new OPTIMALNI(n, r, nizReferecni);
+                optimalni.popuniMatricu();
+                optimalni.ispisiMatricu();
                 break;
             default:
                 System.out.println("EXCEPTION!");

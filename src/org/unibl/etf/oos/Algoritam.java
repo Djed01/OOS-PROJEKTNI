@@ -6,7 +6,7 @@ public abstract class Algoritam {
     int nizReferenci[] = new int[brojReferenci];
     String matrica[][];
 
-    Algoritam(int brojOkvira, int brojReferenci, int []nizReferenci){
+     Algoritam(int brojOkvira, int brojReferenci, int []nizReferenci){
         this.brojOkvira = brojOkvira;
         this.brojReferenci = brojReferenci;
         this.nizReferenci = nizReferenci;
@@ -22,13 +22,14 @@ public abstract class Algoritam {
             matrica[0][i]=String.valueOf(nizReferenci[i]);
     }
 
-    void ispisiMatricu( ){
+     void ispisiMatricu( ){
         for (int j = 0; j < brojOkvira + 2; j++)
         {
             System.out.println("\n");
             for(int i=0;i<brojReferenci;i++)
                 System.out.printf("%3s",matrica[j][i]);
         }
+        ispisiEfikasnost();
     }
 
     boolean trebaUpisatiPF(int trenutnaKolona,int referenca){
@@ -42,6 +43,16 @@ public abstract class Algoritam {
         }
 
         return true;
+    }
+
+    void ispisiEfikasnost(){
+        int br=0;
+        for(int i=0;i<brojReferenci;i++){
+            if(matrica[1][i]=="PF"){
+                br+=1;
+            }
+        }
+        System.out.println("\n\n\nEfikasnost algoritma: "+(((double)br/brojReferenci)*100)+"%");
     }
 
 

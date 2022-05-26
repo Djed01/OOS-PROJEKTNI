@@ -6,6 +6,7 @@ public class LRU extends Algoritam {
 
     @Override
     void  popuniMatricu(){
+        upisiPrviRed();
         for(int i=0;i<brojReferenci;i++){
             if(trebaUpisatiPF(i,nizReferenci[i])){
                 matrica[1][i]="PF";
