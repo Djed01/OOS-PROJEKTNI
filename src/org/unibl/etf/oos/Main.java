@@ -1,25 +1,27 @@
 package org.unibl.etf.oos;
 
+import org.unibl.etf.oos.*;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int n,r;
+        int n, r;
         int tipAlgoritma;
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.print("Unesite broj okvira: ");
             n = scanner.nextInt();
-        }while(n<0);
+        } while (n <= 1);
         do {
             System.out.print("Unesite broj referenci:");
             r = scanner.nextInt();
-        }while (r<1);
+        } while (r < 1);
 
         int nizReferecni[] = new int[r];
-        for(int i=0;i<r;i++){
-            System.out.print("Referenca["+(i+1)+"]: ");
+        for (int i = 0; i < r; i++) {
+            System.out.print("Referenca[" + (i + 1) + "]: ");
             nizReferecni[i] = scanner.nextInt();
         }
 
@@ -27,12 +29,11 @@ public class Main {
             System.out.print("1-FIFO\n2-LRU\n3-SC\n4-LFU\n5-OPTIMALNI\n");
             System.out.print("Izaberite algoritam: ");
             tipAlgoritma = scanner.nextInt();
-        } while ( tipAlgoritma>5 || tipAlgoritma< 1);
+        } while (tipAlgoritma > 5 || tipAlgoritma < 1);
 
-        switch (tipAlgoritma){
-            case 1:
-            {
-                FIFO fifo = new FIFO(n,r,nizReferecni);
+        switch (tipAlgoritma) {
+            case 1: {
+                FIFO fifo = new FIFO(n, r, nizReferecni);
                 fifo.popuniMatricu();
                 fifo.ispisiMatricu();
             }
@@ -43,24 +44,22 @@ public class Main {
                 lru.ispisiMatricu();
             }
             break;
-            case 3:
-            {
+            case 3: {
                 System.out.println("Unesite referencu koja ce imati R bit:");
                 int rBit = scanner.nextInt();
-                SC sc = new SC(n,r,nizReferecni,rBit);
+                SC sc = new SC(n, r, nizReferecni, rBit);
                 sc.popuniMatricu();
                 sc.ispisiMatricu();
             }
             break;
-            case 4:
-            {
+            case 4: {
                 LFU lfu = new LFU(n, r, nizReferecni);
                 lfu.popuniMatricu();
                 lfu.ispisiMatricu();
             }
             break;
             case 5:
-                OPTIMALNI optimalni =new OPTIMALNI(n, r, nizReferecni);
+                OPTIMALNI optimalni = new OPTIMALNI(n, r, nizReferecni);
                 optimalni.popuniMatricu();
                 optimalni.ispisiMatricu();
                 break;

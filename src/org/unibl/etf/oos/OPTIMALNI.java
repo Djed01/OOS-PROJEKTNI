@@ -10,7 +10,7 @@ public class OPTIMALNI extends Algoritam {
     }
 
     @Override
-     void popuniMatricu() {
+    void popuniMatricu() {
         upisiPrviRed();
         for (int i = 0; i < brojReferenci; i++) {
             if (trebaUpisatiPF(i, nizReferenci[i])) {
@@ -36,7 +36,6 @@ public class OPTIMALNI extends Algoritam {
                     Integer tempArr[] = new Integer[brojOkvira - 1];
                     int m = 0;
                     for (int k = i + 1; k < brojReferenci; k++) {
-                        // if (matrica[j][i - 1] != "  " && matrica[j][i-1]!=null) {
                         for (int j = 2; j < brojOkvira + 2; j++) {
                             if (nizReferenci[k] == Integer.parseInt(matrica[j][i - 1])) {
                                 if (tempArr[brojOkvira - 2] != null) {
@@ -60,15 +59,15 @@ public class OPTIMALNI extends Algoritam {
                         }
                     } else {
                         int k;
-                        for(k=brojOkvira+1;k>=2;k--)
-                            if(!Arrays.asList(tempArr).contains(Integer.parseInt(matrica[k][i - 1]))) {
+                        for (k = brojOkvira + 1; k >= 2; k--)
+                            if (!Arrays.asList(tempArr).contains(Integer.parseInt(matrica[k][i - 1]))) {
                                 matrica[k][i] = String.valueOf(nizReferenci[i]);
                                 break;
                             }
                         for (int j = 2; j < brojOkvira + 2; j++) {
-                            if(j==k){
+                            if (j == k) {
                                 continue;
-                            }else {
+                            } else {
                                 matrica[j][i] = matrica[j][i - 1];
                             }
                         }
