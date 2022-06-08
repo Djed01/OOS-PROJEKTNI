@@ -23,16 +23,18 @@ public class OPTIMALNI extends Algoritam {
                 for (int j = 3; j < brojOkvira + 2; j++)
                     matrica[j][i] = "  ";
             } else {
-                if (matrica[brojOkvira + 1][i - 1] == "  ") {
+                if (matrica[1][i] == "  ") {
+                    for (int k = 2; k < brojOkvira + 2; k++) {
+                        matrica[k][i] = matrica[k][i - 1];
+                    }
+                }
+                else if (matrica[brojOkvira + 1][i - 1] == "  ") {
                     matrica[2][i] = String.valueOf(nizReferenci[i]);
                     for (int k = 3; k < brojOkvira + 2; k++) {
                         matrica[k][i] = matrica[k - 1][i - 1];
                     }
-                } else if (matrica[1][i] == "  ") {
-                    for (int k = 2; k < brojOkvira + 2; k++) {
-                        matrica[k][i] = matrica[k][i - 1];
-                    }
-                } else if (matrica[1][i] == "PF") {
+                }
+                else if (matrica[1][i] == "PF") {
                     Integer tempArr[] = new Integer[brojOkvira - 1];
                     int m = 0;
                     for (int k = i + 1; k < brojReferenci; k++) {
