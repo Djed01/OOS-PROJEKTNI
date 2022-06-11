@@ -43,8 +43,10 @@ public class OPTIMALNI extends Algoritam {
                                 if (tempArr[brojOkvira - 2] != null) {
                                     continue;
                                 } else {
-                                    tempArr[m] = Integer.parseInt(matrica[j][i - 1]);
-                                    m++;
+                                    if(!Arrays.asList(tempArr).contains(Integer.parseInt(matrica[j][i - 1]))) {
+                                        tempArr[m] = Integer.parseInt(matrica[j][i - 1]);
+                                        m++;
+                                    }
                                 }
                             }
                         }
