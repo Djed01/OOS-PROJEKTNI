@@ -34,7 +34,7 @@ public class SC extends Algoritam {
                     matrica[j][i] = "  ";
             } else {
                 if (matrica[1][i] == "PF") {
-                    if (i > brojOkvira - 1 && mapa.get(Integer.parseInt(matrica[brojOkvira + 1][i - 1])) && Integer.parseInt(matrica[brojOkvira + 1][i - 1]) != nizReferenci[i]) {
+                    if (matrica[brojOkvira+1][i-1] !="  " && i > brojOkvira - 1  && mapa.get(Integer.parseInt(matrica[brojOkvira + 1][i - 1])) && Integer.parseInt(matrica[brojOkvira + 1][i - 1]) != nizReferenci[i]) {
                         mapa.put(rBit, false);
                         matrica[2][i] = String.valueOf(nizReferenci[i]);
                         matrica[3][i] = String.valueOf(rBit);
