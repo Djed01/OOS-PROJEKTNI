@@ -1,5 +1,5 @@
 # OOS-PROJEKTNI
-Projektni zadatak iz Osnova operativnih sistema.
+### Projektni zadatak iz *Osnova operativnih sistema*.
 
 Realizovati aplikaciju koja demonstrira rad različitih algoritama za zamjenu stranica virtuelne
 memorije računara. Potrebno je podržati sljedeće algoritme: FIFO, LRU, Second Chance, LFU i Optimalni
