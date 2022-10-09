@@ -15,7 +15,7 @@ algoritama. Primjer (kako može da izgleda) izvršavanja simulacije je dat na sl
 
 
 
-**[ENG]**
+**===============================[ENG]===========================**
 
 This project is about different algorithms which allow the user to work with virtual memory. Algorithms which are implemented are FIFO, LRU, Second Chance, LFU and Optimal algorithm.
 
